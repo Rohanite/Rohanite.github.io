@@ -5,19 +5,39 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>In Text We Jump</title>
   </head>
-  <body style="text-align: center">
-    <canvas id="unity-canvas" style="width: 1200px; height: 675px; background: #000000"></canvas>
-    <script src="Build/bin.loader.js"></script>
-    <script>
-      createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/bin.data",
-        frameworkUrl: "Build/bin.framework.js",
-        codeUrl: "Build/bin.wasm",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "Rohanite",
-        productName: "In Text We Jump",
-        productVersion: "1.0",
-      });
-    </script>
+  <body>
+
+<span style="float: left">
+
+<h1>Rohanites <br> Site</h2>
+
+<hr>
+
+<h2> <a href="https://rohanite.github.io/">Home</a> </h3>
+
+<hr>
+
+<h3> <a href="https://rohanite.github.io/InTextWeJump">In Text We Jump</a> </h4>
+
   </body>
+</span>
+
+<div style="float: center;">
+
+<canvas id="unity-canvas" style="width: 1200px; height: 675px; background: #000000; margin-left: 200px; margin-top: 100px"></canvas>
+<script src="Build/bin.loader.js"></script>
+<script>
+  createUnityInstance(document.querySelector("#unity-canvas"), {
+    dataUrl: "Build/bin.data",
+    frameworkUrl: "Build/bin.framework.js",
+    codeUrl: "Build/bin.wasm",
+    streamingAssetsUrl: "StreamingAssets",
+    companyName: "Rohanite",
+    productName: "In Text We Jump",
+    productVersion: "1.0",
+  });
+</script>
+
+</div>
+
 </html>
