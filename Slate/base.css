@@ -2218,7 +2218,7 @@ html.platform-win[lang=en-US]:not(.app-focused) body:not(.oldTitleBarEnabled-D8p
   padding: var(--spacing);
   height: auto;
   color: var(--text-normal);
-  font-size: 12px;
+  font-size: 16px;
   text-transform: none;
 }
 #app-mount .privateChannels-1nO12o .privateChannelRecipientsInviteButtonIcon-3A3uTc {
@@ -9786,7 +9786,7 @@ html.theme-light #app-mount .layer-3QrUeG[aria-label*=SETTINGS] .contentRegion-3
   margin-right: var(--spacing-half);
 }
 #app-mount .layer-3QrUeG[aria-label=USER_SETTINGS] .codeRedemptionRedirect-1wVR4b {
-  font-size: 12px;
+  font-size: 16px;
   font-weight: var(--font-weight-normal);
   color: var(--text-normal);
   margin-top: var(--spacing-double);
