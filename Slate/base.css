@@ -19,10 +19,10 @@
   --spacing-triple: calc(var(--spacing) * 3);
   --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
   --font-family-monospace: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  --font-size-xsm:9px;
-  --font-size-sm: 11px;
-  --font-size: 12px;
-  --font-size-md: 14px;
+  --font-size-xsm:12px;
+  --font-size-sm: 14px;
+  --font-size: 16px;
+  --font-size-md: 16px;
   --font-size-lg: 28px;
   --font-size-xl: 32px;
   --font-size-xxl: 42px;
