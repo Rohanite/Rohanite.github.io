@@ -5024,9 +5024,9 @@ html.theme-light #app-mount .reactions-12N0jA .reaction-1hd86g:not(.reactionMe-w
   padding: 0;
 }
 
-/*#app-mount .membersWrap-2h-GB4 {
+#app-mount .membersWrap-2h-GB4 {
   min-width: unset;
-}*/
+}
 #app-mount .membersWrap-2h-GB4 .members-1998pB {
   /*width: var(--sidebar-width);*/
   border-left: 1px solid var(--base-border);
