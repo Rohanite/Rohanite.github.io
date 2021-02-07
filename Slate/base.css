@@ -48,7 +48,7 @@
   --toolbar-border: #141414;
   --input-height: 25px;
   --item-height: 34px;
-  --sidebar-width: 260px;
+  --sidebar-width: 15px;
   --member-height: 42px;
   --channel-height: 32px;
   --avatar-size-xsm:18px;
@@ -5028,7 +5028,7 @@ html.theme-light #app-mount .reactions-12N0jA .reaction-1hd86g:not(.reactionMe-w
   min-width: unset;
 }
 #app-mount .membersWrap-2h-GB4 .members-1998pB {
-  /*width: var(--sidebar-width);*/
+  width: var(--sidebar-width);
   border-left: 1px solid var(--base-border);
   background: var(--background);
 }
