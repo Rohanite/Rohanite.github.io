@@ -1,0 +1,2126 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Australian Labor Party - press-room</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <style>
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-300.woff);
+            font-weight: 300;
+        }
+
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-400.woff);
+            font-weight: 400;
+        }
+
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-500.woff);
+            font-weight: 500;
+        }
+
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-600.woff);
+            font-weight: 600;
+        }
+
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-700.woff);
+            font-weight: 700;
+        }
+
+        body {
+            background-color: #36393e;
+            color: #dcddde;
+            font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 17px;
+            font-weight: 400;
+        }
+
+        a {
+            color: #00aff4;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        img {
+            object-fit: contain;
+        }
+
+        .markdown {
+            max-width: 100%;
+            line-height: 1.3;
+            overflow-wrap: break-word;
+        }
+
+        .preserve-whitespace {
+            white-space: pre-wrap;
+        }
+
+        .spoiler-text {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+        }
+
+        .spoiler-text--hidden {
+            cursor: pointer;
+            background-color: #202225;
+            color: rgba(0, 0, 0, 0);
+        }
+
+        .spoiler-text--hidden:hover {
+            background-color: rgba(32, 34, 37, 0.8);
+        }
+
+        .spoiler-text--hidden::selection {
+            color: rgba(0, 0, 0, 0);
+        }
+
+        .quote {
+            display: flex;
+            margin: 0.05em 0;
+        }
+
+        .quote::before {
+            content: "";
+            margin-right: 0.5em;
+            border: 2px solid #4f545c;
+            border-radius: 3px;
+        }
+
+        .pre {
+            background-color: #2f3136;
+            font-family: "Consolas", "Courier New", Courier, monospace;
+        }
+
+        .pre--multiline {
+            margin-top: 0.25em;
+            padding: 0.5em;
+            border: 2px solid #282b30;
+            border-radius: 5px;
+            color: #b9bbbe;
+        }
+
+        .pre--multiline.hljs {
+            background-color: #2f3136;
+            color: #b9bbbe;
+        }
+
+        .pre--inline {
+            padding: 2px;
+            border-radius: 3px;
+            font-size: 0.85em;
+        }
+
+        .mention {
+            border-radius: 3px;
+            padding: 0 2px;
+            color: #7289da;
+            background-color: rgba(114, 137, 218, .1);
+            font-weight: 500;
+        }
+
+        .timestamp {
+            border-radius: 3px;
+            padding: 0 2px;
+            background-color: rgba(255, 255, 255, 0.06);
+        }
+
+        .emoji {
+            width: 1.325em;
+            height: 1.325em;
+            margin: 0 0.06em;
+            vertical-align: -0.4em;
+        }
+
+        .emoji--small {
+            width: 1em;
+            height: 1em;
+        }
+
+        .emoji--large {
+            width: 2.8em;
+            height: 2.8em;
+        }
+
+        .preamble {
+            display: grid;
+            margin: 0 0.3em 0.6em 0.3em;
+            max-width: 100%;
+            grid-template-columns: auto 1fr;
+        }
+
+        .preamble__guild-icon-container {
+            grid-column: 1;
+        }
+
+        .preamble__guild-icon {
+            max-width: 88px;
+            max-height: 88px;
+        }
+
+        .preamble__entries-container {
+            grid-column: 2;
+            margin-left: 0.6em;
+        }
+
+        .preamble__entry {
+            font-size: 1.4em;
+            color: #ffffff;
+        }
+
+        .preamble__entry--small {
+            font-size: 1em;
+        }
+
+        .chatlog {
+            max-width: 100%;
+        }
+
+        .chatlog__message-group {
+            display: grid;
+            margin: 0 0.6em;
+            padding: 0.9em 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            grid-template-columns: auto 1fr;
+        }
+
+        .chatlog__reference-symbol {
+            grid-column: 1;
+            margin: 8px 4px 4px 18px;
+            border-left: 2px solid #4f545c;
+            border-top: 2px solid #4f545c;
+            border-radius: 8px 0 0 0;
+        }
+
+        .chatlog__reference {
+            display: flex;
+            grid-column: 2;
+            margin-bottom: 0.25em;
+            font-size: 0.875em;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            align-items: center;
+            color: #b5b6b8;
+        }
+
+        .chatlog__reference-avatar {
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            margin-right: 0.25em;
+        }
+
+        .chatlog__reference-name {
+            margin-right: 0.3em;
+            font-weight: 600;
+        }
+
+        .chatlog__reference-content {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .chatlog__reference-content a:hover {
+            text-decoration: none;
+        }
+
+        .chatlog__reference-link {
+            cursor: pointer;
+            color: #b5b6b8;
+        }
+
+        .chatlog__reference-link * {
+            display: inline;
+            pointer-events: none;
+        }
+
+        .chatlog__reference-link:hover {
+            color: #ffffff;
+        }
+
+        .chatlog__reference-link:hover *:not(.spoiler-text) {
+            color: #ffffff;
+        }
+
+        .chatlog__reference-edited-timestamp {
+            margin-left: 0.25em;
+            font-size: 0.8em;
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .chatlog__author-avatar-container {
+            grid-column: 1;
+            width: 40px;
+            height: 40px;
+            margin-right: 16px;
+        }
+
+        .chatlog__author-avatar {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+
+        .chatlog__messages {
+            grid-column: 2;
+            min-width: 50%;
+        }
+
+        .chatlog__author-name {
+            font-weight: 500;
+            color: #ffffff;
+        }
+
+        .chatlog__timestamp {
+            margin-left: 0.3em;
+            font-size: 0.75em;
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .chatlog__message {
+            padding: 0.1em 0.3em;
+            margin: 0 -0.3em;
+            background-color: transparent;
+            transition: background-color 1s ease;
+        }
+
+        .chatlog__message--highlighted {
+            background-color: rgba(114, 137, 218, 0.2);
+        }
+
+        .chatlog__message--pinned {
+            background-color: rgba(249, 168, 37, 0.05);
+        }
+
+        .chatlog__content {
+            font-size: 0.95em;
+            word-wrap: break-word;
+        }
+
+        .chatlog__edited-timestamp {
+            margin-left: 0.15em;
+            font-size: 0.8em;
+        }
+
+        .chatlog__attachment {
+            display: inline-block;
+            position: relative;
+            margin-top: 0.3em;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .chatlog__attachment--hidden {
+            cursor: pointer;
+            box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+        }
+
+        .chatlog__attachment--hidden * {
+            pointer-events: none;
+        }
+
+        .chatlog__attachment-spoiler-caption {
+            display: none;
+            z-index: 999;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 0.4em 0.8em;
+            background-color: rgba(0, 0, 0, 0.9);
+            border-radius: 20px;
+            color: #dcddde;
+            font-size: 0.9em;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .chatlog__attachment--hidden .chatlog__attachment-spoiler-caption {
+            display: block;
+        }
+
+        .chatlog__attachment--hidden:hover .chatlog__attachment-spoiler-caption {
+            color: #fff;
+        }
+
+        .chatlog__attachment-media {
+            vertical-align: top;
+            max-width: 45vw;
+            max-height: 500px;
+            border-radius: 3px;
+        }
+
+        .chatlog__attachment--hidden .chatlog__attachment-media {
+            filter: blur(44px);
+        }
+
+        .chatlog__attachment-generic {
+            width: 100%;
+            max-width: 520px;
+            height: 40px;
+            padding: 10px;
+            background-color: #2f3136;
+            border: 1px solid #292b2f;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .chatlog__attachment--hidden .chatlog__attachment-generic {
+            filter: blur(44px);
+        }
+
+        .chatlog__attachment-generic-icon {
+            float: left;
+            width: 30px;
+            height: 100%;
+            margin-right: 10px;
+        }
+
+        .chatlog__attachment-generic-size {
+            color: #72767d;
+            font-size: 12px;
+        }
+
+        .chatlog__attachment-generic-name {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .chatlog__edited-timestamp {
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .chatlog__embed {
+            display: flex;
+            margin-top: 0.3em;
+            max-width: 520px;
+        }
+
+        .chatlog__embed-color-pill {
+            flex-shrink: 0;
+            width: 0.25em;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+        }
+
+        .chatlog__embed-color-pill--default {
+            background-color: #202225;
+        }
+
+        .chatlog__embed-content-container {
+            display: flex;
+            flex-direction: column;
+            padding: 0.5em 0.6em;
+            background-color: rgba(46, 48, 54, 0.3);
+            border: 1px solid rgba(46, 48, 54, 0.6);
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+        }
+
+        .chatlog__embed-content {
+            display: flex;
+            width: 100%;
+        }
+
+        .chatlog__embed-text {
+            flex: 1;
+        }
+
+        .chatlog__embed-author {
+            display: flex;
+            margin-bottom: 0.3em;
+            align-items: center;
+        }
+
+        .chatlog__embed-author-icon {
+            margin-right: 0.5em;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        .chatlog__embed-author-name {
+            font-size: 0.875em;
+            font-weight: 600;
+            color: #ffffff
+        }
+
+        .chatlog__embed-author-name-link {
+            color: #ffffff;
+        }
+
+        .chatlog__embed-title {
+            margin-bottom: 0.2em;
+            font-size: 0.875em;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .chatlog__embed-description {
+            font-weight: 500;
+            font-size: 0.85em;
+            color: #dcddde;
+        }
+
+        .chatlog__embed-fields {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0 0.5em;
+        }
+
+        .chatlog__embed-field {
+            flex: 0;
+            min-width: 100%;
+            max-width: 506px;
+            padding-top: 0.6em;
+            font-size: 0.875em;
+        }
+
+        .chatlog__embed-field--inline {
+            flex: 1;
+            flex-basis: auto;
+            min-width: 150px;
+        }
+
+        .chatlog__embed-field-name {
+            margin-bottom: 0.2em;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .chatlog__embed-field-value {
+            font-weight: 500;
+            color: #dcddde;
+        }
+
+        .chatlog__embed-thumbnail {
+            flex: 0;
+            margin-left: 1.2em;
+            max-width: 80px;
+            max-height: 80px;
+            border-radius: 3px;
+        }
+
+        .chatlog__embed-image-container {
+            margin-top: 0.6em;
+        }
+
+        .chatlog__embed-image {
+            max-width: 500px;
+            max-height: 400px;
+            border-radius: 3px;
+        }
+
+        .chatlog__embed-footer {
+            margin-top: 0.6em;
+            color: #dcddde;
+        }
+
+        .chatlog__embed-footer-icon {
+            margin-right: 0.2em;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+
+        .chatlog__embed-footer-text {
+            vertical-align: middle;
+            font-size: 0.75em;
+            font-weight: 500;
+        }
+
+        .chatlog__embed-plainimage {
+            vertical-align: top;
+            max-width: 45vw;
+            max-height: 500px;
+            border-radius: 3px;
+        }
+
+        .chatlog__embed-spotify {
+            border: 0;
+        }
+
+        .chatlog__embed-youtube-container {
+            margin-top: 0.6em;
+        }
+
+        .chatlog__embed-youtube {
+            border: 0;
+            border-radius: 3px;
+        }
+
+        .chatlog__reactions {
+            display: flex;
+        }
+
+        .chatlog__reaction {
+            display: flex;
+            align-items: center;
+            margin: 0.35em 0.1em 0.1em 0.1em;
+            padding: 0.2em 0.35em;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 3px;
+        }
+
+        .chatlog__reaction-count {
+            min-width: 9px;
+            margin-left: 0.35em;
+            font-size: 0.875em;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .chatlog__bot-tag {
+            position: relative;
+            top: -.1em;
+            margin-left: 0.3em;
+            padding: 0.05em 0.3em;
+            border-radius: 3px;
+            line-height: 1.3;
+            background-color: #5865F2;
+            color: #ffffff;
+            font-size: 0.625em;
+            font-weight: 500;
+        }
+
+        .postamble {
+            margin: 1.4em 0.3em 0.6em 0.3em;
+            padding: 1em;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .postamble__entry {
+            color: #ffffff;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/solarized-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.pre--multiline').forEach(block => hljs.highlightBlock(block));
+        });
+    </script>
+
+    <script>
+        function scrollToMessage(event, id) {
+            var element = document.getElementById('message-' + id);
+
+            if (element) {
+                event.preventDefault();
+
+                element.classList.add('chatlog__message--highlighted');
+
+                window.scrollTo({
+                    top: element.getBoundingClientRect().top - document.body.getBoundingClientRect().top - (window.innerHeight / 2),
+                    behavior: 'smooth'
+                });
+
+                window.setTimeout(function() {
+                    element.classList.remove('chatlog__message--highlighted');
+                }, 2000);
+            }
+        }
+
+        function showSpoiler(event, element) {
+            if (element && element.classList.contains('spoiler-text--hidden')) {
+                event.preventDefault();
+                element.classList.remove('spoiler-text--hidden');
+            }
+            if (element && element.classList.contains('chatlog__attachment--hidden')) {
+                event.preventDefault();
+                element.classList.remove('chatlog__attachment--hidden');
+            }
+        }
+    </script>
+
+    <svg style="display: none">
+        <symbol id="icon-attachment" viewBox="0 0 720 960">
+            <path fill="#f4f5fb" d="M50,935a25,25,0,0,1-25-25V50A25,25,0,0,1,50,25H519.6L695,201.32V910a25,25,0,0,1-25,25Z" />
+            <path fill="#7789c4" d="M509.21,50,670,211.63V910H50V50H509.21M530,0H50A50,50,0,0,0,0,50V910a50,50,0,0,0,50,50H670a50,50,0,0,0,50-50h0V191Z" />
+            <path fill="#f4f5fb" d="M530,215a25,25,0,0,1-25-25V50a25,25,0,0,1,16.23-23.41L693.41,198.77A25,25,0,0,1,670,215Z" />
+            <path fill="#7789c4" d="M530,70.71,649.29,190H530V70.71M530,0a50,50,0,0,0-50,50V190a50,50,0,0,0,50,50H670a50,50,0,0,0,50-50Z" />
+        </symbol>
+    </svg>
+</head>
+<body>
+
+<div class="preamble">
+    <div class="preamble__guild-icon-container">
+        <img class="preamble__guild-icon" src="https://cdn.discordapp.com/icons/619844041189621780/592a2e57184af2525a6d6b749c50a927.png" alt="Guild icon" loading="lazy">
+    </div>
+    <div class="preamble__entries-container">
+        <div class="preamble__entry">Australian Labor Party</div>
+        <div class="preamble__entry">Welcome / press-room</div>
+
+
+            <div class="preamble__entry preamble__entry--small">
+Between 17-Oct-21 12:00 AM and 18-Oct-21 11:25 PM            </div>
+    </div>
+</div>
+
+<div class="chatlog">
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/186431901496508416/704280fe618d2340cda8171706d8031a.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Youmaton#1190" data-user-id="186431901496508416" style="color: rgb(241,196,15)">youma person</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-21 10:44 PM</span>
+
+            <div class="chatlog__message " data-message-id="899624045149028374" id="message-899624045149028374" title="Message sent: 18-Oct-21 10:44 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><em>Yala Talama enters</em></span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/676022616590516244/afe64f3f658caf8fbc257791bc1514da.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Cam T#6441" data-user-id="676022616590516244" style="color: rgb(204,237,255)">Cam T</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-21 10:45 PM</span>
+
+            <div class="chatlog__message " data-message-id="899624110022361159" id="message-899624110022361159" title="Message sent: 18-Oct-21 10:45 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Welcome</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/299834560751992833/fd29ccfca2f808a2aa3903691b4f8c9c.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Rohanite#5417" data-user-id="299834560751992833" style="color: rgb(132,61,164)">Rohanite</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-21 10:45 PM</span>
+
+            <div class="chatlog__message " data-message-id="899624147875946526" id="message-899624147875946526" title="Message sent: 18-Oct-21 10:45 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><em>enters</em></span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/373568772205707267/a4ae70e6ae13ef74f6019dad3629671e.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Russian Hacker#7290" data-user-id="373568772205707267" style="color: rgb(20,86,241)">Russian Hacker</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-21 10:45 PM</span>
+
+            <div class="chatlog__message " data-message-id="899624151390761001" id="message-899624151390761001" title="Message sent: 18-Oct-21 10:45 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><em>Anthony Shamini enters</em></span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/299834560751992833/fd29ccfca2f808a2aa3903691b4f8c9c.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Rohanite#5417" data-user-id="299834560751992833" style="color: rgb(132,61,164)">Rohanite</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-21 10:45 PM</span>
+
+            <div class="chatlog__message " data-message-id="899624182818684960" id="message-899624182818684960" title="Message sent: 18-Oct-21 10:45 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><span class="mention" style="color: rgb(241, 196, 15); background-color: rgba(241, 196, 15, 0.1);">@Press Pass</span> It&#39;s time</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/555984382805016596/975d93f17869472278b914b41b252faa.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="MerrilyPutrid#2860" data-user-id="555984382805016596" style="color: rgb(241,196,15)">MerrilyPutrid</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-21 10:45 PM</span>
+
+            <div class="chatlog__message " data-message-id="899624217312632883" id="message-899624217312632883" title="Message sent: 18-Oct-21 10:45 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">press</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/241467952254287872/a34970f73b24ab5b80888569c6c67500.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Gregor The Beggar#0808" data-user-id="241467952254287872" style="color: rgb(233,12,39)">Gregor The Beggar</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-21 10:45 PM</span>
+
+            <div class="chatlog__message " data-message-id="899624234043715584" id="message-899624234043715584" title="Message sent: 18-Oct-21 10:45 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><em>enters groggily</em></span>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="regional_indicator_g">
+                                <img class="emoji emoji--small" alt="&#127468;" src="https://twemoji.maxcdn.com/2/svg/1f1ec.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">2</span>
+                            </div>
+                            <div class="chatlog__reaction" title="regional_indicator_r">
+                                <img class="emoji emoji--small" alt="&#127479;" src="https://twemoji.maxcdn.com/2/svg/1f1f7.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">2</span>
+                            </div>
+                            <div class="chatlog__reaction" title="regional_indicator_e">
+                                <img class="emoji emoji--small" alt="&#127466;" src="https://twemoji.maxcdn.com/2/svg/1f1ea.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">2</span>
+                            </div>
+                            <div class="chatlog__reaction" title="GP">
+                                <img class="emoji emoji--small" alt="GP" src="https://cdn.discordapp.com/emojis/886255953194926160.png" loading="lazy">
+                                <span class="chatlog__reaction-count">2</span>
+                            </div>
+                            <div class="chatlog__reaction" title="regional_indicator_o">
+                                <img class="emoji emoji--small" alt="&#127476;" src="https://twemoji.maxcdn.com/2/svg/1f1f4.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">2</span>
+                            </div>
+                            <div class="chatlog__reaction" title="rythm10">
+                                <img class="emoji emoji--small" alt="rythm10" src="https://cdn.discordapp.com/emojis/879067492239147029.png" loading="lazy">
+                                <span class="chatlog__reaction-count">2</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/299834560751992833/fd29ccfca2f808a2aa3903691b4f8c9c.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Rohanite#5417" data-user-id="299834560751992833" style="color: rgb(132,61,164)">Rohanite</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-21 10:45 PM</span>
+
+            <div class="chatlog__message " data-message-id="899624338205081602" id="message-899624338205081602" title="Message sent: 18-Oct-21 10:45 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">I am here today to announce two pieces of news about the Social Democratic Party.</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/241467952254287872/a34970f73b24ab5b80888569c6c67500.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Gregor The Beggar#0808" data-user-id="241467952254287872" style="color: rgb(233,12,39)">Gregor The Beggar</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-21 10:45 PM</span>
+
+            <div class="chatlog__message " data-message-id="899624342734909480" id="message-899624342734909480" title="Message sent: 18-Oct-21 10:45 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><em>evidently on the piss</em></span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/676022616590516244/afe64f3f658caf8fbc257791bc1514da.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Cam T#6441" data-user-id="676022616590516244" style="color: rgb(204,237,255)">Cam T</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-21 10:46 PM</span>
+
+            <div class="chatlog__message " data-message-id="899624532359385149" id="message-899624532359385149" title="Message sent: 18-Oct-21 10:46 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Press</span>
+
+                        </div>
+                    </div>
+
+                    <div class="chatlog__attachment " onclick="">
+
+                            <a href="https://cdn.discordapp.com/attachments/620261269747925032/899624529222053909/image0.jpg">
+                                <img class="chatlog__attachment-media" src="https://cdn.discordapp.com/attachments/620261269747925032/899624529222053909/image0.jpg" alt="Image attachment" title="Image: image0.jpg (46.24 KB)" loading="lazy">
+                            </a>
+                    </div>
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/299834560751992833/fd29ccfca2f808a2aa3903691b4f8c9c.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Rohanite#5417" data-user-id="299834560751992833" style="color: rgb(132,61,164)">Rohanite</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-21 10:46 PM</span>
+
+            <div class="chatlog__message " data-message-id="899624563200110602" id="message-899624563200110602" title="Message sent: 18-Oct-21 10:46 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">First of all, a new chairperson has been elected, <span class="mention" title="djello#5901">@djello</span> is hereby elected as the new chairperson of the party.</span>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="cool">
+                                <img class="emoji emoji--small" alt="&#127378;" src="https://twemoji.maxcdn.com/2/svg/1f192.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">6</span>
+                            </div>
+                            <div class="chatlog__reaction" title="ok">
+                                <img class="emoji emoji--small" alt="&#127383;" src="https://twemoji.maxcdn.com/2/svg/1f197.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">3</span>
+                            </div>
+                            <div class="chatlog__reaction" title="regional_indicator_c">
+                                <img class="emoji emoji--small" alt="&#127464;" src="https://twemoji.maxcdn.com/2/svg/1f1e8.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">4</span>
+                            </div>
+                            <div class="chatlog__reaction" title="regional_indicator_e">
+                                <img class="emoji emoji--small" alt="&#127466;" src="https://twemoji.maxcdn.com/2/svg/1f1ea.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">4</span>
+                            </div>
+                            <div class="chatlog__reaction" title="regional_indicator_n">
+                                <img class="emoji emoji--small" alt="&#127475;" src="https://twemoji.maxcdn.com/2/svg/1f1f3.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">4</span>
+                            </div>
+                            <div class="chatlog__reaction" title="regional_indicator_t">
+                                <img class="emoji emoji--small" alt="&#127481;" src="https://twemoji.maxcdn.com/2/svg/1f1f9.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">4</span>
+                            </div>
+                            <div class="chatlog__reaction" title="regional_indicator_r">
+                                <img class="emoji emoji--small" alt="&#127479;" src="https://twemoji.maxcdn.com/2/svg/1f1f7.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">4</span>
+                            </div>
+                            <div class="chatlog__reaction" title="Labor">
+                                <img class="emoji emoji--small" alt="Labor" src="https://cdn.discordapp.com/emojis/804849725022273566.png" loading="lazy">
+                                <span class="chatlog__reaction-count">4</span>
+                            </div>
+                            <div class="chatlog__reaction" title="regional_indicator_i">
+                                <img class="emoji emoji--small" alt="&#127470;" src="https://twemoji.maxcdn.com/2/svg/1f1ee.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">4</span>
+                            </div>
+                            <div class="chatlog__reaction" title="regional_indicator_s">
+                                <img class="emoji emoji--small" alt="&#127480;" src="https://twemoji.maxcdn.com/2/svg/1f1f8.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">4</span>
+                            </div>
+                            <div class="chatlog__reaction" title="regional_indicator_m">
+                                <img class="emoji emoji--small" alt="&#127474;" src="https://twemoji.maxcdn.com/2/svg/1f1f2.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">4</span>
+                            </div>
+                            <div class="chatlog__reaction" title="auslabor">
+                                <img class="emoji emoji--small" alt="auslabor" src="https://cdn.discordapp.com/emojis/790258908920807445.png" loading="lazy">
+                                <span class="chatlog__reaction-count">4</span>
+                            </div>
+                            <div class="chatlog__reaction" title="newlabour">
+                                <img class="emoji emoji--small" alt="newlabour" src="https://cdn.discordapp.com/emojis/611645700102422538.png" loading="lazy">
+                                <span class="chatlog__reaction-count">4</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/641901973234253854/fa400c97661c403b6c5ea83515190497.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="slater#0002" data-user-id="641901973234253854" style="color: rgb(0,166,79)">slater</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-21 10:47 PM</span>
+
+            <div class="chatlog__message " data-message-id="899624634008358953" id="message-899624634008358953" title="Message sent: 18-Oct-21 10:47 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><em>enters</em></span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/299834560751992833/fd29ccfca2f808a2aa3903691b4f8c9c.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Rohanite#5417" data-user-id="299834560751992833" style="color: rgb(132,61,164)">Rohanite</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-21 10:50 PM</span>
+
+            <div class="chatlog__message " data-message-id="899625607455997962" id="message-899625607455997962" title="Message sent: 18-Oct-21 10:50 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Secondly, a debate and vote has been held over the last week about rebranding the Social Democratic Party to the Australian Labor Party. The vote was run by the Electoral Commission. I can now confirm that the Electoral Commission has announced the amendment has been passed by the party. As such the party is now the Australian Labor Party. This rebranding will be submitted to the AEC soon. Thank you! I will now take questions.</span>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="flushed">
+                                <img class="emoji emoji--small" alt="&#128563;" src="https://twemoji.maxcdn.com/2/svg/1f633.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">2</span>
+                            </div>
+                            <div class="chatlog__reaction" title="verysad">
+                                <img class="emoji emoji--small" alt="verysad" src="https://cdn.discordapp.com/emojis/414662507295145985.png" loading="lazy">
+                                <span class="chatlog__reaction-count">2</span>
+                            </div>
+                            <div class="chatlog__reaction" title="SadOk">
+                                <img class="emoji emoji--small" alt="SadOk" src="https://cdn.discordapp.com/emojis/699242092043698176.png" loading="lazy">
+                                <span class="chatlog__reaction-count">2</span>
+                            </div>
+                            <div class="chatlog__reaction" title="sobcat">
+                                <img class="emoji emoji--small" alt="sobcat" src="https://cdn.discordapp.com/emojis/719002023709769838.png" loading="lazy">
+                                <span class="chatlog__reaction-count">2</span>
+                            </div>
+                            <div class="chatlog__reaction" title="regional_indicator_r">
+                                <img class="emoji emoji--small" alt="&#127479;" src="https://twemoji.maxcdn.com/2/svg/1f1f7.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">2</span>
+                            </div>
+                            <div class="chatlog__reaction" title="regional_indicator_i">
+                                <img class="emoji emoji--small" alt="&#127470;" src="https://twemoji.maxcdn.com/2/svg/1f1ee.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">2</span>
+                            </div>
+                            <div class="chatlog__reaction" title="regional_indicator_p">
+                                <img class="emoji emoji--small" alt="&#127477;" src="https://twemoji.maxcdn.com/2/svg/1f1f5.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">2</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/641901973234253854/fa400c97661c403b6c5ea83515190497.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="slater#0002" data-user-id="641901973234253854" style="color: rgb(0,166,79)">slater</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-21 10:51 PM</span>
+
+            <div class="chatlog__message " data-message-id="899625672534790204" id="message-899625672534790204" title="Message sent: 18-Oct-21 10:51 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Stands up*</span>
+
+                                <span class="chatlog__edited-timestamp" title="18-Oct-21 10:51 PM">(edited)</span>
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/555984382805016596/975d93f17869472278b914b41b252faa.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="MerrilyPutrid#2860" data-user-id="555984382805016596" style="color: rgb(241,196,15)">MerrilyPutrid</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-21 10:51 PM</span>
+
+            <div class="chatlog__message " data-message-id="899625674606792744" id="message-899625674606792744" title="Message sent: 18-Oct-21 10:51 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">anyways, stream doja cat~ <a href="https://open.spotify.com/album/1nAQbHeOWTfQzbOoFrvndW?autoplay=true">https://open.spotify.com/album/1nAQbHeOWTfQzbOoFrvndW?autoplay=true</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://open.spotify.com/album/1nAQbHeOWTfQzbOoFrvndW?autoplay=true">
+                                                        <div class="markdown preserve-whitespace">Planet Her</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">Doja Cat &#183; Album &#183; 2021 &#183; 14 songs.</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-1.discordapp.net/external/guKsrSB5zWbSuLtsYR7Kicy1lSXHvPlHrrai4QITQBw/https/i.scdn.co/image/ab67616d0000b2734df3245f26298a1579ecc321">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-1.discordapp.net/external/guKsrSB5zWbSuLtsYR7Kicy1lSXHvPlHrrai4QITQBw/https/i.scdn.co/image/ab67616d0000b2734df3245f26298a1579ecc321" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+        <div class="chatlog__reference-symbol"></div>
+        <div class="chatlog__reference">
+                <img class="chatlog__reference-avatar" src="https://cdn.discordapp.com/avatars/641901973234253854/fa400c97661c403b6c5ea83515190497.png?size=128" alt="Avatar" loading="lazy">
+                <span class="chatlog__reference-name" title="slater#0002" style="color: rgb(0,166,79)">slater</span>
+                <div class="chatlog__reference-content">
+                    <span class="chatlog__reference-link" onclick="scrollToMessage(event, &#39;899625672534790204&#39;)">
+Stands up*                    </span>
+
+                        <span class="chatlog__reference-edited-timestamp" title="18-Oct-21 10:51 PM">(edited)</span>
+                </div>
+        </div>
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/299834560751992833/fd29ccfca2f808a2aa3903691b4f8c9c.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Rohanite#5417" data-user-id="299834560751992833" style="color: rgb(132,61,164)">Rohanite</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-21 10:51 PM</span>
+
+            <div class="chatlog__message " data-message-id="899625712586227792" id="message-899625712586227792" title="Message sent: 18-Oct-21 10:51 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Yes?</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/555984382805016596/975d93f17869472278b914b41b252faa.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="MerrilyPutrid#2860" data-user-id="555984382805016596" style="color: rgb(241,196,15)">MerrilyPutrid</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-21 10:51 PM</span>
+
+            <div class="chatlog__message " data-message-id="899625721343918151" id="message-899625721343918151" title="Message sent: 18-Oct-21 10:51 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">for clear skin</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/641901973234253854/fa400c97661c403b6c5ea83515190497.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="slater#0002" data-user-id="641901973234253854" style="color: rgb(0,166,79)">slater</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-21 10:52 PM</span>
+
+            <div class="chatlog__message " data-message-id="899626006967635988" id="message-899626006967635988" title="Message sent: 18-Oct-21 10:52 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">What prompted this rebranding? The Social Democratic Party has been around since 2018 and led multiple governments, and while Labor is certainly an older name, the Social Democratic Party is clearly well known by the electorate.</span>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="hearhear">
+                                <img class="emoji emoji--small" alt="hearhear" src="https://cdn.discordapp.com/emojis/667333737041756161.png" loading="lazy">
+                                <span class="chatlog__reaction-count">3</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/299834560751992833/fd29ccfca2f808a2aa3903691b4f8c9c.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Rohanite#5417" data-user-id="299834560751992833" style="color: rgb(132,61,164)">Rohanite</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-21 10:57 PM</span>
+
+            <div class="chatlog__message " data-message-id="899627132861435905" id="message-899627132861435905" title="Message sent: 18-Oct-21 10:57 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">We believe that the SDP, whilst it&#39;s a nice name, does have less name recognition then Labor, remember before 2017 the Labor Party was well over 100 years old and most certainly had more name recognition. We believe this is still likely the case. We can also see that the SDP name carries a lot of baggage and history. With a new generation of the party arguably beginning we believe it is time to change our identity, the SDP of the past achieved some excellent things but it is time for a new chapter.</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/266127685585993731/a4a81022f09338a8512357a2eed39727.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="kyōsantō#0001" data-user-id="266127685585993731" style="color: rgb(0,166,79)">kyōsantō</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-21 10:57 PM</span>
+
+            <div class="chatlog__message " data-message-id="899627147973525585" id="message-899627147973525585" title="Message sent: 18-Oct-21 10:57 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><em>stands</em></span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="899627543706099802" id="message-899627543706099802" title="Message sent: 18-Oct-21 10:58 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">The Social Democrats were formed directly in difference to the Labor Party and the Socialists, an utter rejection of both parties. 
+
+Do you believe that it is right to reject the legacy of Youmaton and NGSpy in their journey to ensure that the mistake of Labor would not be repeated?</span>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="mikiboss">
+                                <img class="emoji emoji--small" alt="mikiboss" src="https://cdn.discordapp.com/emojis/724934126825635840.png" loading="lazy">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/299834560751992833/fd29ccfca2f808a2aa3903691b4f8c9c.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Rohanite#5417" data-user-id="299834560751992833" style="color: rgb(132,61,164)">Rohanite</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-21 11:00 PM</span>
+
+            <div class="chatlog__message " data-message-id="899627936175505421" id="message-899627936175505421" title="Message sent: 18-Oct-21 11:00 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">I do not believe this is rejecting the legacy of Youmaton or NGSpy, we will not repeat the mistake of previous Labor parties and will stand up for all Australians.</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/660413306179289088/cf2ac2747d3a3d26b9e621a71e34db00.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Malala#6516" data-user-id="660413306179289088" style="color: rgb(241,196,15)">Malala</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-21 11:00 PM</span>
+
+            <div class="chatlog__message " data-message-id="899627970262609963" id="message-899627970262609963" title="Message sent: 18-Oct-21 11:00 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><em>stands</em>
+Does the rebranding to Labor signify a shift towards a class struggle based approach to politics and a return to the Democratic Socialist ideals that the ALP was founded on?</span>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="flushed">
+                                <img class="emoji emoji--small" alt="&#128563;" src="https://twemoji.maxcdn.com/2/svg/1f633.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">3</span>
+                            </div>
+                            <div class="chatlog__reaction" title="eyes">
+                                <img class="emoji emoji--small" alt="&#128064;" src="https://twemoji.maxcdn.com/2/svg/1f440.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">3</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+        <div class="chatlog__reference-symbol"></div>
+        <div class="chatlog__reference">
+                <img class="chatlog__reference-avatar" src="https://cdn.discordapp.com/avatars/266127685585993731/a4a81022f09338a8512357a2eed39727.png?size=128" alt="Avatar" loading="lazy">
+                <span class="chatlog__reference-name" title="kyōsantō#0001" style="color: rgb(0,166,79)">kyōsantō</span>
+                <div class="chatlog__reference-content">
+                    <span class="chatlog__reference-link" onclick="scrollToMessage(event, &#39;899627543706099802&#39;)">
+The Social Democrats were formed directly in difference to the Labor Party and the Socialists, an utter rejection of both parties. 
+
+Do you believe that it is right to reject the legacy of Youmaton and NGSpy in their journey to ensure that the mistake of Labor would not be repeated?                    </span>
+
+                </div>
+        </div>
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/641901973234253854/fa400c97661c403b6c5ea83515190497.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="slater#0002" data-user-id="641901973234253854" style="color: rgb(0,166,79)">slater</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-21 11:01 PM</span>
+
+            <div class="chatlog__message " data-message-id="899628208171941938" id="message-899628208171941938" title="Message sent: 18-Oct-21 11:01 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Did they not then go and form government with the left in December sir</span>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="true">
+                                <img class="emoji emoji--small" alt="true" src="https://cdn.discordapp.com/emojis/881428623280726026.png" loading="lazy">
+                                <span class="chatlog__reaction-count">2</span>
+                            </div>
+                    </div>
+            </div>
+            <div class="chatlog__message " data-message-id="899628439601020999" id="message-899628439601020999" title="Message sent: 18-Oct-21 11:02 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">EVIL SDP BE LIKE:
+
+
+YAY QANTAS NATIONALISATION</span>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="star">
+                                <img class="emoji emoji--small" alt="⭐" src="https://twemoji.maxcdn.com/2/svg/2b50.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">3</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+        <div class="chatlog__reference-symbol"></div>
+        <div class="chatlog__reference">
+                <img class="chatlog__reference-avatar" src="https://cdn.discordapp.com/avatars/660413306179289088/cf2ac2747d3a3d26b9e621a71e34db00.png?size=128" alt="Avatar" loading="lazy">
+                <span class="chatlog__reference-name" title="Malala#6516" style="color: rgb(241,196,15)">Malala</span>
+                <div class="chatlog__reference-content">
+                    <span class="chatlog__reference-link" onclick="scrollToMessage(event, &#39;899627970262609963&#39;)">
+<em>stands</em>
+Does the rebranding to Labor signify a shift towards a class struggle based approach to politics and a return to the Democratic Socialist ideals that the ALP was founded on?                    </span>
+
+                </div>
+        </div>
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/299834560751992833/fd29ccfca2f808a2aa3903691b4f8c9c.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Rohanite#5417" data-user-id="299834560751992833" style="color: rgb(132,61,164)">Rohanite</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-21 11:03 PM</span>
+
+            <div class="chatlog__message " data-message-id="899628809626738748" id="message-899628809626738748" title="Message sent: 18-Oct-21 11:03 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">The Australian Labor Party will fight for the working class and for the best interests of Australians.</span>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="rommelingonthefloor">
+                                <img class="emoji emoji--small" alt="rommelingonthefloor" src="https://cdn.discordapp.com/emojis/377411779170402305.png" loading="lazy">
+                                <span class="chatlog__reaction-count">2</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/266127685585993731/a4a81022f09338a8512357a2eed39727.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="kyōsantō#0001" data-user-id="266127685585993731" style="color: rgb(0,166,79)">kyōsantō</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-21 11:03 PM</span>
+
+            <div class="chatlog__message " data-message-id="899628829302214696" id="message-899628829302214696" title="Message sent: 18-Oct-21 11:03 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><em>stands</em>
+There are currently multiple former SDP members in Parliament, and even the President and Deputy President, who left the party because of the rightward shift. What do you intend to achieve through your continued rightward shift, signified most evidently with your rebranding?</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+        <div class="chatlog__reference-symbol"></div>
+        <div class="chatlog__reference">
+                <img class="chatlog__reference-avatar" src="https://cdn.discordapp.com/avatars/266127685585993731/a4a81022f09338a8512357a2eed39727.png?size=128" alt="Avatar" loading="lazy">
+                <span class="chatlog__reference-name" title="kyōsantō#0001" style="color: rgb(0,166,79)">kyōsantō</span>
+                <div class="chatlog__reference-content">
+                    <span class="chatlog__reference-link" onclick="scrollToMessage(event, &#39;899628829302214696&#39;)">
+<em>stands</em>
+There are currently multiple former SDP members in Parliament, and even the President and Deputy President, who left the party because of the rightward shift. What do you intend to achieve through your continued rightward shift, signified most evidently with your rebranding?                    </span>
+
+                </div>
+        </div>
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/299834560751992833/fd29ccfca2f808a2aa3903691b4f8c9c.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Rohanite#5417" data-user-id="299834560751992833" style="color: rgb(132,61,164)">Rohanite</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-21 11:11 PM</span>
+
+            <div class="chatlog__message " data-message-id="899630741078564884" id="message-899630741078564884" title="Message sent: 18-Oct-21 11:11 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Well we&#39;re fighting for what we believe is in the best interests of Australians, this rebranding is to mark a new chapter in this party. I would argue that calling this a rightward shift is incorrect, there have always been party members who believe in these views but with a number of defections over the last year these members have come to be the major influence in the party and the parties identity should reflect that.</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+        <div class="chatlog__reference-symbol"></div>
+        <div class="chatlog__reference">
+                <img class="chatlog__reference-avatar" src="https://cdn.discordapp.com/avatars/299834560751992833/fd29ccfca2f808a2aa3903691b4f8c9c.png?size=128" alt="Avatar" loading="lazy">
+                <span class="chatlog__reference-name" title="Rohanite#5417" style="color: rgb(132,61,164)">Rohanite</span>
+                <div class="chatlog__reference-content">
+                    <span class="chatlog__reference-link" onclick="scrollToMessage(event, &#39;899628809626738748&#39;)">
+The Australian Labor Party will fight for the working class and for the best interests of Australians.                    </span>
+
+                </div>
+        </div>
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/660413306179289088/cf2ac2747d3a3d26b9e621a71e34db00.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Malala#6516" data-user-id="660413306179289088" style="color: rgb(241,196,15)">Malala</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-21 11:11 PM</span>
+
+            <div class="chatlog__message " data-message-id="899630747860758588" id="message-899630747860758588" title="Message sent: 18-Oct-21 11:11 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><em>stands</em>
+Can you be more specific. Does this rebrand include a commitment to the Democratic Socialist principles enshrined in the ALP’s history and constitution? If it does not, why not, especially considering the considerable contributions of Socialists to the success of the SDP and the ALP?</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/159985870458322944/b50adff099924dd5e6b72d13f77eb9d7.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="MEE6#4876" data-user-id="159985870458322944" style="color: rgb(84,110,122)">MEE6</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">18-Oct-21 11:11 PM</span>
+
+            <div class="chatlog__message " data-message-id="899630750809337946" id="message-899630750809337946" title="Message sent: 18-Oct-21 11:11 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">GG <span class="mention" title="Russian Hacker#7290">@Russian Hacker</span>, you just advanced to level 2!</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/676022616590516244/afe64f3f658caf8fbc257791bc1514da.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Cam T#6441" data-user-id="676022616590516244" style="color: rgb(204,237,255)">Cam T</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-21 11:12 PM</span>
+
+            <div class="chatlog__message " data-message-id="899631039230656552" id="message-899631039230656552" title="Message sent: 18-Oct-21 11:12 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">If ur making it a new party, u should make a new party. Not make the sdp something it’s not.</span>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="hearhear">
+                                <img class="emoji emoji--small" alt="hearhear" src="https://cdn.discordapp.com/emojis/667333737041756161.png" loading="lazy">
+                                <span class="chatlog__reaction-count">3</span>
+                            </div>
+                            <div class="chatlog__reaction" title="retweet">
+                                <img class="emoji emoji--small" alt="retweet" src="https://cdn.discordapp.com/emojis/781836743128645662.png" loading="lazy">
+                                <span class="chatlog__reaction-count">3</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/641901973234253854/fa400c97661c403b6c5ea83515190497.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="slater#0002" data-user-id="641901973234253854" style="color: rgb(0,166,79)">slater</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-21 11:13 PM</span>
+
+            <div class="chatlog__message " data-message-id="899631325592551445" id="message-899631325592551445" title="Message sent: 18-Oct-21 11:13 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Wishing you the best of luck rohan</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="899631344324337684" id="message-899631344324337684" title="Message sent: 18-Oct-21 11:13 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Power to you</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/373568772205707267/a4ae70e6ae13ef74f6019dad3629671e.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Russian Hacker#7290" data-user-id="373568772205707267" style="color: rgb(20,86,241)">Russian Hacker</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-21 11:14 PM</span>
+
+            <div class="chatlog__message " data-message-id="899631468551208971" id="message-899631468551208971" title="Message sent: 18-Oct-21 11:14 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">(I gotta go, just putting this question here for Rohan to answer later)</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="899631496976019516" id="message-899631496976019516" title="Message sent: 18-Oct-21 11:14 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><em>stands</em></span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/266127685585993731/a4a81022f09338a8512357a2eed39727.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="kyōsantō#0001" data-user-id="266127685585993731" style="color: rgb(0,166,79)">kyōsantō</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-21 11:14 PM</span>
+
+            <div class="chatlog__message " data-message-id="899631512058736700" id="message-899631512058736700" title="Message sent: 18-Oct-21 11:14 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Should have rebranded to the United Democrats, what the party really is.</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/373568772205707267/a4ae70e6ae13ef74f6019dad3629671e.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Russian Hacker#7290" data-user-id="373568772205707267" style="color: rgb(20,86,241)">Russian Hacker</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-21 11:14 PM</span>
+
+            <div class="chatlog__message " data-message-id="899631555549483008" id="message-899631555549483008" title="Message sent: 18-Oct-21 11:14 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Shouldn&#39;t you and your party be spending your efforts opposing the budget and keeping the government to account? You and your party have been absent the political sphere in the past few days, leaving the crossbench to take your place as opposition, so, do you believe you&#39;ve got your priorities right with this rebrand?</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+        <div class="chatlog__reference-symbol"></div>
+        <div class="chatlog__reference">
+                <img class="chatlog__reference-avatar" src="https://cdn.discordapp.com/avatars/660413306179289088/cf2ac2747d3a3d26b9e621a71e34db00.png?size=128" alt="Avatar" loading="lazy">
+                <span class="chatlog__reference-name" title="Malala#6516" style="color: rgb(241,196,15)">Malala</span>
+                <div class="chatlog__reference-content">
+                    <span class="chatlog__reference-link" onclick="scrollToMessage(event, &#39;899630747860758588&#39;)">
+<em>stands</em>
+Can you be more specific. Does this rebrand include a commitment to the Democratic Socialist principles enshrined in the ALP’s history and constitution? If it does not, why not, especially considering the considerable contributions of Socialists to the success of the SDP and the ALP?                    </span>
+
+                </div>
+        </div>
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/299834560751992833/fd29ccfca2f808a2aa3903691b4f8c9c.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Rohanite#5417" data-user-id="299834560751992833" style="color: rgb(132,61,164)">Rohanite</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-21 11:16 PM</span>
+
+            <div class="chatlog__message " data-message-id="899632047088365568" id="message-899632047088365568" title="Message sent: 18-Oct-21 11:16 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Democratic Socialism may have been a part of Labor a hundred years ago but we all know that in recent decades the Labor Party has not been a democratic socialist party. And I am aware of the contributions of a number of socialists and thank Youma, ARichTeaBiscuit, and all others who have contributed massively to the party as socialists, but again, it is time for a new chapter. Parties have to evolve or they die, and that is what we are doing today, evolving.</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+        <div class="chatlog__reference-symbol"></div>
+        <div class="chatlog__reference">
+                <img class="chatlog__reference-avatar" src="https://cdn.discordapp.com/avatars/373568772205707267/a4ae70e6ae13ef74f6019dad3629671e.png?size=128" alt="Avatar" loading="lazy">
+                <span class="chatlog__reference-name" title="Russian Hacker#7290" style="color: rgb(20,86,241)">Russian Hacker</span>
+                <div class="chatlog__reference-content">
+                    <span class="chatlog__reference-link" onclick="scrollToMessage(event, &#39;899631555549483008&#39;)">
+Shouldn&#39;t you and your party be spending your efforts opposing the budget and keeping the government to account? You and your party have been absent the political sphere in the past few days, leaving the crossbench to take your place as opposition, so, do you believe you&#39;ve got your priorities right with this rebrand?                    </span>
+
+                </div>
+        </div>
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/299834560751992833/fd29ccfca2f808a2aa3903691b4f8c9c.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Rohanite#5417" data-user-id="299834560751992833" style="color: rgb(132,61,164)">Rohanite</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-21 11:18 PM</span>
+
+            <div class="chatlog__message " data-message-id="899632503999070218" id="message-899632503999070218" title="Message sent: 18-Oct-21 11:18 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Yes, I do. For a number of reasons I must admit we haven&#39;t been as active over the past few days, but after a great turnout in the budget debate we have been taking some time to rest and recuperate whilst this matter has gone to a vote.</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="899632638535561247" id="message-899632638535561247" title="Message sent: 18-Oct-21 11:18 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">I have other things I need to do so I will only be taking one more question.</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+        <div class="chatlog__reference-symbol"></div>
+        <div class="chatlog__reference">
+                <img class="chatlog__reference-avatar" src="https://cdn.discordapp.com/avatars/299834560751992833/fd29ccfca2f808a2aa3903691b4f8c9c.png?size=128" alt="Avatar" loading="lazy">
+                <span class="chatlog__reference-name" title="Rohanite#5417" style="color: rgb(132,61,164)">Rohanite</span>
+                <div class="chatlog__reference-content">
+                    <span class="chatlog__reference-link" onclick="scrollToMessage(event, &#39;899632638535561247&#39;)">
+I have other things I need to do so I will only be taking one more question.                    </span>
+
+                </div>
+        </div>
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/241467952254287872/a34970f73b24ab5b80888569c6c67500.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Gregor The Beggar#0808" data-user-id="241467952254287872" style="color: rgb(233,12,39)">Gregor The Beggar</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-21 11:23 PM</span>
+
+            <div class="chatlog__message " data-message-id="899633666555269170" id="message-899633666555269170" title="Message sent: 18-Oct-21 11:23 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://tenor.com/view/cute-dogs-puppy-black-dog-wiggle-gif-11848141">https://tenor.com/view/cute-dogs-puppy-black-dog-wiggle-gif-11848141</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-2.discordapp.net/external/y8mrikSVuE8ragr1NSKEOrJTlT8OHjL5ko7Fc7D13Bc/https/media.tenor.co/images/4814e4bb4e251f08c25e2627fcde9790/tenor.png">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-2.discordapp.net/external/y8mrikSVuE8ragr1NSKEOrJTlT8OHjL5ko7Fc7D13Bc/https/media.tenor.co/images/4814e4bb4e251f08c25e2627fcde9790/tenor.png" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+            <div class="chatlog__message " data-message-id="899633688277549096" id="message-899633688277549096" title="Message sent: 18-Oct-21 11:23 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Thoughts on this dog?</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/299834560751992833/fd29ccfca2f808a2aa3903691b4f8c9c.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Rohanite#5417" data-user-id="299834560751992833" style="color: rgb(132,61,164)">Rohanite</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-21 11:24 PM</span>
+
+            <div class="chatlog__message " data-message-id="899633927008948244" id="message-899633927008948244" title="Message sent: 18-Oct-21 11:24 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">He&#39;s a very cute dog. Although he looks a bit sus, might want to check for some &quot;dog eggs&quot; near him.</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="899633982654775327" id="message-899633982654775327" title="Message sent: 18-Oct-21 11:24 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Right, thank you everyone.</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="899633996965761025" id="message-899633996965761025" title="Message sent: 18-Oct-21 11:24 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><em>exits</em></span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+
+</div>
+
+
+
+</body>
+
+</html>
